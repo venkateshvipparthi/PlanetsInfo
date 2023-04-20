@@ -1,19 +1,38 @@
 //
-//  PlanetsInfoTests.swift
+//  PlanetsRepositoryTests.swift
 //  PlanetsInfoTests
 //
-//  Created by Venkatesh Vipparthi on 19/04/2023.
+//  Created by Admin on 19/04/2023.
 //
 
 import XCTest
 @testable import PlanetsInfo
 
-class PlanetsInfoTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class PlanetsRepositoryTests: XCTestCase {
+    
+    var mockRestAPIManager: MockNetworkAPIManagerTests!
+    
+    @MainActor override func setUp() {
+        mockRestAPIManager = MockNetworkAPIManagerTests()
+    }
+    
+    override func tearDown() {
+        mockRestAPIManager = nil
     }
 
+    
+    // when apiManager return success data
+    func testWhengetPlanetsListSuccess() async {
+        
+        let planetRepository = PlanetsRepositoryImplemantation(networkAPIManager: <#Networkable#>)
+//        let planetsRepository = PlanetsRepository(serviceManager: mockRestAPIManager, persisttence: PersistenceController(inMemory: true))
+//        mockRestAPIManager.path = "PlanetsListResponseData"
+//        let lists = try! await planetsRepository.getAllPlanets()
+//        XCTAssertNotNil(lists)
+//        XCTAssertEqual(lists.count, 10)
+    }
+
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }

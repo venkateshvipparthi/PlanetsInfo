@@ -2,7 +2,7 @@
 //  PlanetsInfoUITests.swift
 //  PlanetsInfoUITests
 //
-//  Created by Admin on 19/04/2023.
+//  Created by Venkatesh Vipparthi on 19/04/2023.
 //
 
 import XCTest

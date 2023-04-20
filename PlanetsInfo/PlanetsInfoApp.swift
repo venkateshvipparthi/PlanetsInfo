@@ -2,7 +2,7 @@
 //  PlanetsInfoApp.swift
 //  PlanetsInfo
 //
-//  Created by Admin on 19/04/2023.
+//  Created by Venkatesh Vipparthi on 19/04/2023.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct PlanetsInfoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlanetListView(viewModel: PlanetsViewModel(planetsRepository: PlanetsRepositoryImplemantation(networkAPIManager: NetworkApiManager())))
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

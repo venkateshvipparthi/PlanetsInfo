@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  PlanetsInfo
 //
-//  Created by Admin on 19/04/2023.
+//  Created by Venkatesh Vipparthi on 19/04/2023.
 //
 
 import CoreData
@@ -12,11 +12,7 @@ struct PersistenceController {
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
+        let viewContext = result.container.viewContext        
         do {
             try viewContext.save()
         } catch {
